@@ -1,10 +1,10 @@
 .opening-animation {
-  margin: 100px auto 0 auto;
+  margin: 50px auto 0 auto;
   max-width: 320px;
   height: 445px;
   position: relative;
   @include mq($from: mobile, $until: tablet) {
-    margin-top: 0;
+    margin-top: 30px;
   }
 }
 

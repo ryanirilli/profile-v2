@@ -9,6 +9,7 @@
 }
 
 $image-gallery-picker-radius: 10px;
+$image-gallery-picker-radius-mobile: 20px;
 .c-image-gallery__picker {
   display: inline-block;
   width: $image-gallery-picker-radius;
@@ -17,4 +18,9 @@ $image-gallery-picker-radius: 10px;
   margin-right: 15px;
   box-shadow: 0 0 0 2px white;
   cursor: pointer;
+  @include mq($from: mobile, $until: desktop) {
+    width: $image-gallery-picker-radius-mobile;
+    height: $image-gallery-picker-radius-mobile;
+    margin-right: 25px;
+  }
 }

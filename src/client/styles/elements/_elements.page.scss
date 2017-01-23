@@ -12,9 +12,18 @@ a, p, li {
   font-weight: 100;
 }
 
+a {
+  &:visited {
+    color: inherit;
+  }
+}
+
 p {
   font-size: 13px;
   line-height: 1.6;
+  @include mq($from: mobile, $until: desktop) {
+    font-size: 16px;
+  }
 }
 
 footer {

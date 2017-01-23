@@ -63,11 +63,11 @@ export class Home extends Component {
 
       <section className="u-bg u-bg--serrated-ends u-bg-main-color u-margin-top-huge u-margin-top@tablet">
         <div className="o-wrapper u-padding-top u-padding-bottom-large u-padding-bottom@tablet">
-          <div className="u-text-center u-padding-top-large u-padding-bottom">
+          <div className="u-text-center u-padding-top-large u-padding-top@tablet u-padding-bottom">
             <img className="u-1/3@desktop u-2/3@tablet" src="/public/spotworm-logo.svg" />
           </div>
           <div className="o-layout o-layout--center">
-            <div className="o-layout__item u-1/3@tablet u-1/1@mobile">
+            <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
               <p>
                 My latest project, Spotworm, is built for modern music nerds on the hunt for the best new tunes. It uses the power
                 of the Spotify API to let you search by artist, and gives you a list of tracks you might like. You can
@@ -75,7 +75,7 @@ export class Home extends Component {
                 swipe through hundreds of tracks. When you find your jam, simply add it to a playlist and keep on browsing.
               </p>
             </div>
-            <div className="o-layout__item u-1/3@tablet u-1/1@mobile">
+            <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
               <p>
                 This project explores the technical design decisions that need to be addressed when building
                 a mobile and desktop application, where the user experience requires more than just css media queries. By
@@ -93,10 +93,10 @@ export class Home extends Component {
       </section>
 
       <section className="o-wrapper u-padding-top u-padding-bottom-large u-padding-bottom@tablet">
-        <div className="o-layout o-layout--center">
+        <div className="o-layout o-layout--center o-layout--flush">
           <div className="o-layout__item u-1/1">
             <div className="u-text-center">
-              <h1 className="c-secondary-heading c-heading-huge u-margin-top-large u-margin-bottom-large u-margin-top-small@tablet">
+              <h1 className="c-secondary-heading c-heading-huge u-margin-top-large u-margin-bottom-large u-margin-top-small@tablet u-margin-bottom-small@tablet">
                 Metropolis
               </h1>
             </div>
@@ -104,20 +104,18 @@ export class Home extends Component {
           <div className="layout__item u-1/1">
             <div className="o-layout o-layout--center">
               <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
-                <div className="u-padding-right u-padding-top-tiny">
-                  <p className="u-text-main u-padding-left">
-                    I  work at Uber on a team called Metropolis. We aim to help cities use our data to help inform
-                    decision making in urban planning and development. We're a group of rock solid engineers tackling some
-                    really difficult challenges. My role is mostly in the front end architecture and managing the user
-                    experience, so I primarily work on the implementation side of things.
-                  </p>
-                  <p className="u-text-main u-padding-left">
-                    I was asked to come up with a logo for our team to represent our work and mission. A family crest
-                    seemed most appropriate here seeing how tightly knit we were with one another. The subtle hexagon
-                    pattern represents the various zones we bucket neighborhoods in, and of course the iconic Space Needle
-                    to let the larger Uber groups know about the quality of work coming straight outta the Pacific Northwest.
-                  </p>
-                </div>
+                <p className="u-text-main">
+                  I  work at Uber on a team called Metropolis. We aim to help cities use our data to help inform
+                  decision making in urban planning and development. We're a group of rock solid engineers tackling some
+                  really difficult challenges. My role is mostly in the front end architecture and managing the user
+                  experience, so I primarily work on the implementation side of things.
+                </p>
+                <p className="u-text-main">
+                  I was asked to come up with a logo for our team to represent our work and mission. A family crest
+                  seemed most appropriate here seeing how tightly knit we were with one another. The subtle hexagon
+                  pattern represents the various zones we bucket neighborhoods in, and of course the iconic Space Needle
+                  to let the larger Uber groups know about the quality of work coming straight outta the Pacific Northwest.
+                </p>
               </div>
 
               <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
@@ -159,7 +157,7 @@ export class Home extends Component {
       </section>
 
       <section>
-        <div className="o-wrapper u-padding-top-large u-padding-bottom-large u-padding-bottom-large u-padding-bottom@tablet">
+        <div className="o-wrapper u-padding-top-large u-padding-bottom-large u-padding-top@tablet u-padding-bottom-large u-padding-bottom@tablet">
           <h2 className="u-text-center c-secondary-heading c-heading-large">
             Unsullied Logo
           </h2>
