@@ -1,0 +1,76 @@
+.u-bg-lightest-grey {
+  background: $lightest-grey;
+}
+
+%accent-circle {
+  position: relative;
+  &:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 25px);
+  }
+}
+
+%serrated-ends {
+  position: relative;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background-repeat: repeat-x;
+  }
+  &:before {
+    bottom: -15px;
+  }
+  &:after {
+    top: -15px;
+  }
+}
+
+.u-bg-main-color {
+  background: $main-color;
+  color: rgba(white, 0.46);
+  &.u-bg--accent {
+    @extend %accent-circle;
+    &:before {
+      background: $main-color;
+    }
+  }
+  &.u-bg--serrated-ends {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-main.svg');
+    }
+    &:after {
+      background-image: url('/public/serrated-top-main.svg');
+    }
+  }
+  .c-btn {
+    background: $main-color-btn;
+  }
+}
+
+.u-bg-secondary-color {
+  background: $secondary-color;
+  color: rgba(white, 0.46);
+  &.u-bg--accent {
+    @extend %accent-circle;
+    &:before {
+      background: $secondary-color;
+    }
+  }
+  .c-btn {
+    background: $secondary-color;
+  }
+}
+
+.u-bg-tertiary-color {
+  background: $tertiary-color;
+  color: white;
+}

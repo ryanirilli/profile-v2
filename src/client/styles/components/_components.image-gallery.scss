@@ -1,0 +1,20 @@
+.c-image-gallery {
+  text-align: center;
+}
+
+.c-image-gallery__img {}
+
+.c-image-gallery__pickers {
+  margin: 25px 0;
+}
+
+$image-gallery-picker-radius: 10px;
+.c-image-gallery__picker {
+  display: inline-block;
+  width: $image-gallery-picker-radius;
+  height: $image-gallery-picker-radius;
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: 0 0 0 2px white;
+  cursor: pointer;
+}

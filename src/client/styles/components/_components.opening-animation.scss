@@ -1,0 +1,48 @@
+.opening-animation {
+  margin: 100px auto 0 auto;
+  max-width: 320px;
+  height: 445px;
+  position: relative;
+  @include mq($from: mobile, $until: tablet) {
+    margin-top: 0;
+  }
+}
+
+.opening-animation__bg {
+  z-index: -1;
+}
+
+.opening-animation__bg2 {
+  z-index: -2;
+}
+
+.opening-animation__keyboard,
+.opening-animation__mouse,
+.opening-animation__monitor {
+  position: absolute;
+}
+
+.opening-animation__monitor {
+  left: 70px;
+  max-width: 215px;
+  top: 40px;
+}
+
+.opening-animation__keyboard {
+  max-width: 200px;
+  bottom: 70px;
+  left: 0px;
+  z-index: 1;
+}
+
+.opening-animation__mouse {
+  left: 205px;
+  bottom: 45px;
+  max-width: 65px;
+}
+
+.opening-animation__underline {
+  position: absolute;
+  bottom: 0;
+  top: 100% !important;
+}

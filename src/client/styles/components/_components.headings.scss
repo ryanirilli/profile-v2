@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.c-secondary-heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.c-heading-huge {
+  font-size: 100px;
+  @include mq($from: mobile, $until: tablet) {
+    font-size: 50px;
+  }
+}
+
+.c-heading-large {
+  font-size: 70px;
+  @include mq($from: mobile, $until: tablet) {
+    font-size: 30px;
+  }
+}

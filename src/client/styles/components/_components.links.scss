@@ -1,0 +1,10 @@
+.c-link-silent {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.c-link-small {
+  font-size: 13px;
+}
