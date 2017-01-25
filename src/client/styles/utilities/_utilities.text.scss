@@ -2,6 +2,10 @@
   color: $dark-grey;
 }
 
+.u-text-big {
+  font-size: 18px;
+}
+
 .u-text-strong {
   font-weight: 800;
 }
@@ -11,5 +15,13 @@
 }
 
 .u-text-muted {
-  color: rgba(black, 0.25);
+  opacity: 0.5;
+}
+
+.u-text-embossed-dark {
+  text-shadow: 1px 0 black;
+}
+
+.u-text-justify {
+  text-align: justify;
 }

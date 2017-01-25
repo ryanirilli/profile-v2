@@ -1,0 +1,35 @@
+$toggle-size: 30px;
+$toggle-color: $main-color;
+
+.c-toggle {
+  display: inline-block;
+  border: 1px solid $toggle-color;
+  width: $toggle-size * 2.3;
+  height: $toggle-size + 6px;
+  border-radius: $toggle-size;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.c-toggle__switch {
+  width: $toggle-size;
+  height: $toggle-size;
+  border-radius: 50%;
+  background: $toggle-color;
+  position: relative;
+  top: -4px;
+  left: -4px;
+  transition: left 200ms ease;
+}
+
+.c-toggle__switch--on {
+  left: calc(100% + 4px - #{$toggle-size});
+}
+
+.c-toggle--white {
+  border-color: white;
+  background: rgba(0, 0, 0, 0.08);
+  .c-toggle__switch {
+    background: white;
+  }
+}

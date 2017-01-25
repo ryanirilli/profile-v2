@@ -23,8 +23,8 @@ export default class OpeningAnimation extends Component {
       delay: 300,
       duration: 800,
       y: '50px',
-      fill: '#5f8fbf',
-      stroke: '#c8d1da',
+      fill: 'rgba(0,0,0,0.4)',
+      stroke: '#FF7F66',
       strokeLinecap: 'round',
       strokeWidth: 30,
       strokeDashoffset: { [border * -1] : 0 },
@@ -43,8 +43,8 @@ export default class OpeningAnimation extends Component {
       y: '50px',
       delay: 1200,
       easing: 'elastic.out',
-      fill: '#abb7c3',
-      radius: { 120 : 140 }
+      fill: 'rgba(0,0,0,0.3)',
+      radius: { 120 : 150 }
     }).play();
 
     const bgBurst = new mojs.Burst({
@@ -52,7 +52,7 @@ export default class OpeningAnimation extends Component {
       y: '50px',
       stroke: '#fff',
       children: {
-        fill: '#759082',
+        fill: 'white',
       }
     }).play();
 

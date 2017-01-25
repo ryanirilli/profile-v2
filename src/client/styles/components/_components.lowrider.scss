@@ -1,0 +1,34 @@
+.c-lowrider {
+  width: 500px;
+  position: relative;
+  margin: 60px auto 0 auto;
+}
+
+.c-lowrider__body {
+  transform-origin: 100% 20%;
+  position: relative;
+  z-index: 1;
+}
+
+.c-lowrider__front-wheel,
+.c-lowrider__back-wheel {
+  position: absolute;
+  right: 107px;
+  width: 66px;
+  top: 50px;
+}
+
+.c-lowrider__front-wheel {
+  left: 45px;
+  transform-origin: 353px -47px;
+}
+
+.c-lowrider__back-wheel {
+  right: 107px;
+}
+
+.c-lowrider__type {
+  margin: 0 auto;
+  display: block;
+  max-width: 350px;
+}

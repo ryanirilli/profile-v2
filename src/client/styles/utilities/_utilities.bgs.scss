@@ -1,3 +1,22 @@
+.u-bg-white {
+  background: white;
+}
+
+.u-bg-bright {
+  background: #3E454C;
+  color: white;
+}
+
+.u-bg-light-brown {
+  background: #968c7d;
+  &.u-bg--serrated-top {
+    @extend %serrated-ends;
+    &:after {
+      background-image: url('/public/serrated-top-light-brown.svg');
+    }
+  }
+}
+
 .u-bg-lightest-grey {
   background: $lightest-grey;
 }
@@ -33,9 +52,33 @@
   }
 }
 
+
+.u-bg-red {
+  background: $red;
+  color: $white;
+  &.u-bg--accent {
+    @extend %accent-circle;
+    &:before {
+      background: $main-color;
+    }
+  }
+  &.u-bg--serrated-ends {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-red.svg');
+    }
+    &:after {
+      background-image: url('/public/serrated-top-red.svg');
+    }
+  }
+  .c-btn {
+    background: $main-color-btn;
+  }
+}
+
 .u-bg-main-color {
   background: $main-color;
-  color: rgba(white, 0.46);
+  color: $white;
   &.u-bg--accent {
     @extend %accent-circle;
     &:before {
