@@ -159,7 +159,7 @@ export class Home extends Component {
       </section>
 
       <section>
-        <div className="o-wrapper u-padding-top-large u-padding-bottom-large u-padding-top@tablet u-padding-bottom@tablet">
+        <div className="o-wrapper u-padding-top-large u-padding-bottom-huge u-padding-top@tablet u-padding-bottom@tablet">
           <h2 className="u-text-center c-secondary-heading c-heading-light-color c-heading-large">
             Unsullied Logo
           </h2>
