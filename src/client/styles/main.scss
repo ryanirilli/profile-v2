@@ -104,6 +104,7 @@ $mq-breakpoints: (
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
+@import "objects/objects.transitions-and-animations";
 @import "~inuitcss/objects/objects.wrapper";
 @import "~inuitcss/objects/objects.layout";
 @import "~inuitcss/objects/objects.media";

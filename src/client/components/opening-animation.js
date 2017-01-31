@@ -5,6 +5,9 @@ export default class OpeningAnimation extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      keyboardHasLoaded: false,
+      monitorHasLoaded: false,
+      mouseHasLoaded: false,
       keyboard: null,
       monitor: null,
       mouse: null,
@@ -15,7 +18,21 @@ export default class OpeningAnimation extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState) {
+    const prevKeyboardHasLoaded = prevState.keyboardHasLoaded;
+    const prevMinitorHasLoaded = prevState.monitorHasLoaded;
+    const prevMouseHasLoaded = prevState.mouseHasLoaded;
+    const {keyboardHasLoaded, monitorHasLoaded, mouseHasLoaded} = this.state;
+    const prevHasLoadedArr = [prevKeyboardHasLoaded, prevMinitorHasLoaded, prevMouseHasLoaded];
+    const curHasLoadedArr = [keyboardHasLoaded, monitorHasLoaded, mouseHasLoaded];
+    const prevHasLoaded = prevHasLoadedArr.every(item => item);
+    const curHasLoaded = curHasLoadedArr.every(item => item);
+    if (!prevHasLoaded && curHasLoaded) {
+      this.createAnimation();
+    }
+  }
+
+  createAnimation() {
     const border = 2 * Math.PI * 170;
     const bg = new mojs.Shape({
       parent: this.refs.container,
@@ -96,26 +113,25 @@ export default class OpeningAnimation extends Component {
       }
     }).play();
 
-    const underline = new mojs.Shape({
-      parent: this.refs.container,
-      className: 'opening-animation__underline',
-      shape: 'line',
-      stroke: '#c8d1da',
-      radiusY: '1px',
-      radiusX: { 0 : '140%' },
-      duration: 600,
-      strokeLinecap: 'round',
-      easing: 'ease.out'
-    }).play();
-
-    this.setState({bg, bgBurst, monitor, keyboard, mouse, mouseBurst, underline});
+    this.setState({bg, bgBurst, monitor, keyboard, mouse, mouseBurst});
   }
 
   render() {
-    return <div ref="container" className="opening-animation">
-      <img className="opening-animation__keyboard" ref="keyboard" src="/public/keyboard.svg" />
-      <img className="opening-animation__monitor" ref="monitor" src="/public/monitor.svg" />
-      <img className="opening-animation__mouse" ref="mouse" src="/public/mouse.svg" />
+    return <div ref="container" className="opening-animation" style={this.props.style}>
+      <img onLoad={e => this.setState({keyboardHasLoaded: true})}
+           className="opening-animation__keyboard"
+           ref="keyboard"
+           src="/public/keyboard.svg" />
+
+      <img onLoad={e => this.setState({monitorHasLoaded: true})}
+           className="opening-animation__monitor"
+           ref="monitor"
+           src="/public/monitor.svg" />
+
+      <img onLoad={e => this.setState({mouseHasLoaded: true})}
+           className="opening-animation__mouse"
+           ref="mouse"
+           src="/public/mouse.svg" />
     </div>
   }
 }

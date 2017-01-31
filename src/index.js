@@ -12,6 +12,13 @@ const store = createStore(combineReducers({
   app: appReducer
 }));
 
+window.onscroll = () => {
+  store.dispatch({
+    type: 'SET_SCROLL_VAL',
+    scrollVal: document.documentElement.scrollTop || document.body.scrollTop
+  });
+};
+
 function setDevice() {
   store.dispatch({
     type: 'SET_DEVICE',

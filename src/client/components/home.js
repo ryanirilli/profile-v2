@@ -5,6 +5,38 @@ import ImageGallery from './image-gallery';
 import Lowrider from './lowrider';
 
 export class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      heroOpacity: 1,
+      isShowingSpotwormTitle: false,
+      isShowingSpotwormContent: false,
+      isShowingMetropolisTitle: false,
+      isShowingMetropolisContent: false
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.handleScrollVal(nextProps.scrollVal);
+  }
+
+  handleScrollVal(scrollVal) {
+    console.log('scrollVal: ', scrollVal);
+    const heroOpacityScrollValLimit = 250;
+    if (scrollVal <= heroOpacityScrollValLimit) {
+      this.setState({heroOpacity: 1-scrollVal/heroOpacityScrollValLimit})
+    }
+
+    if (scrollVal >= 300) {
+      this.setState({isShowingSpotwormTitle: true});
+    }
+
+    if (scrollVal >= 700) {
+      this.setState({isShowingMetropolisTitle: true});
+    }
+  }
+
   render() {
 
     const metropolisCrestImages = [
@@ -34,9 +66,11 @@ export class Home extends Component {
       }
     ];
 
+    const {isShowingSpotwormTitle, isShowingSpotwormContent, isShowingMetropolisTitle, isShowingMetropolisContent} = this.state;
+
     return <div className="home-container">
       <section className="u-bg-bright u-padding-top u-padding-bottom-huge">
-        <OpeningAnimation />
+        <OpeningAnimation style={{opacity: this.state.heroOpacity}} />
         <div className="u-text-center u-padding-top-small">
           <h1>Ryan Irilli</h1>
           <span className="c-pill c-pill--teal">
@@ -64,9 +98,11 @@ export class Home extends Component {
       <section className="u-bg u-bg--serrated-ends u-bg-main-color">
         <div className="o-wrapper u-padding-top u-padding-bottom-large u-padding-bottom@tablet">
           <div className="u-text-center u-padding-top-large u-padding-top@tablet u-padding-bottom">
-            <img className="u-1/3@desktop u-2/3@tablet" src="/public/spotworm-logo.svg" />
+            <img className={`u-1/3@desktop u-2/3@tablet o-transition-pull-up ${isShowingSpotwormTitle ? 'o-transition-pull-up--active' : ''}`}
+                 onTransitionEnd={e => this.setState({isShowingSpotwormContent: true})}
+                 src="/public/spotworm-logo.svg" />
           </div>
-          <div className="o-layout o-layout--center">
+          <div className={`o-layout o-layout--center o-transition-opacity-up ${isShowingSpotwormContent ? 'o-transition-opacity-up--active' : ''}`}>
             <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
               <p>
                 My latest project, Spotworm, is built for modern music nerds on the hunt for the best new tunes. It uses the power
@@ -96,12 +132,13 @@ export class Home extends Component {
         <div className="o-layout o-layout--center o-layout--flush">
           <div className="o-layout__item u-1/1">
             <div className="u-text-center">
-              <h1 className="c-secondary-heading c-heading-light-color c-heading-huge u-margin-top-large u-margin-bottom-large u-margin-top-small@tablet u-margin-bottom-small@tablet">
+              <h1 className={`c-secondary-heading c-heading-light-color c-heading-huge u-margin-top-large u-margin-bottom-large u-margin-top-small@tablet u-margin-bottom-small@tablet o-transition-pull-up ${isShowingMetropolisTitle ? 'o-transition-pull-up--active' : ''}`}
+                  onTransitionEnd={e => this.setState({isShowingMetropolisContent: true})}>
                 Metropolis
               </h1>
             </div>
           </div>
-          <div className="layout__item u-1/1">
+          <div className={`layout__item u-1/1 o-transition-opacity-up ${isShowingMetropolisContent ? 'o-transition-opacity-up--active' : ''}`}>
             <div className="o-layout o-layout--center">
               <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
                 <div className="u-padding-right">
@@ -120,7 +157,7 @@ export class Home extends Component {
                 </div>
               </div>
 
-              <div className="o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile">
+              <div className={`o-layout__item u-1/3@desktop u-1/2@tablet u-1/1@mobile o-transition-opacity-up ${isShowingMetropolisContent ? 'o-transition-opacity-up--active' : ''}`}>
                 <ImageGallery images={metropolisCrestImages} />
               </div>
 
@@ -198,7 +235,8 @@ export class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  device: state.app.get('device')
+  device: state.app.get('device'),
+  scrollVal: state.app.get('scrollVal')
 });
 
 export default connect(mapStateToProps)(Home);
