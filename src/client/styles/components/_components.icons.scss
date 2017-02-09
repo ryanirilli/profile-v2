@@ -23,6 +23,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-thin-right:before {
+  content: "\e906";
+}
+.icon-chevron-thin-left:before {
+  content: "\e907";
+}
+.icon-menu:before {
+  content: "\e904";
+}
+.icon-options:before {
+  content: "\e904";
+}
+.icon-list:before {
+  content: "\e904";
+}
 .icon-heart:before {
   content: "\e900";
 }
@@ -52,15 +67,6 @@
 }
 .icon-social2:before {
   content: "\e903";
-}
-.icon-menu:before {
-  content: "\e904";
-}
-.icon-options:before {
-  content: "\e904";
-}
-.icon-list:before {
-  content: "\e904";
 }
 .icon-medium:before {
   content: "\e905";

@@ -1,0 +1,16 @@
+.c-modal {
+  position: fixed;
+  z-index: 999;
+  background: rgba(black, 0.8);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.c-modal__content {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}

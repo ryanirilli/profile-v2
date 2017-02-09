@@ -122,14 +122,21 @@ $mq-breakpoints: (
 //
 // Build and include your project’s UI Compoments here.
 @import "components/components.buttons";
+@import "components/components.dot";
 @import "components/components.headings";
 @import "components/components.icons";
 @import "components/components.image-gallery";
 @import "components/components.links";
+@import "components/components.lists";
 @import "components/components.lowrider";
 @import "components/components.menu";
+@import "components/components.mobile-device";
+@import "components/components.modal";
 @import "components/components.opening-animation";
 @import "components/components.pill";
+@import "components/components.polaroid";
+@import "components/components.portfolio";
+@import "components/components.slides";
 @import "components/components.toggle";
 
 // UTILITIES
@@ -138,6 +145,7 @@ $mq-breakpoints: (
 $inuit-offsets: true;
 $inuit-fractions: 1 2 3 4 5 6 7 8 9 10 11 12;
 @import "utilities/utilities.bgs";
+@import "utilities/utilities.blend-modes";
 @import "utilities/utilities.borders";
 @import "~inuitcss/utilities/utilities.widths";
 @import "~inuitcss/utilities/utilities.headings";

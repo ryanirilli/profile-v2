@@ -1,3 +1,114 @@
+@mixin vendor($prop, $val) {
+  -webkit-#{$prop}: #{$val};
+  -ms-#{$prop}: #{$val};
+  -moz-#{$prop}: #{$val};
+  -o-#{$prop}: #{$val};
+  #{$prop}: #{$val};
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+
+  @include vendor(animation, $animations);
+}
+
+$animation1: fade-out-slide-right;
+.o-animate-#{$animation1} {
+  opacity: 1;
+  position: relative;
+  left: 0;
+  @include animation('#{$animation1} 800ms 0ms ease forwards');
+}
+
+.o-animate-#{$animation1}-stagger-1 {
+  opacity: 1;
+  position: relative;
+  left: 0;
+  @include animation('#{$animation1} 800ms 200ms ease forwards');
+}
+
+@include keyframes($animation1) {
+  0%   { opacity: 1;  left: 0; }
+  100% { opacity: 0;  left: 20px; }
+}
+
+$animation2: fade-in-slide-right;
+.o-animate-#{$animation2} {
+  position: relative;
+  opacity: 0;
+  left: 0;
+  @include animation('#{$animation2} 800ms 0ms ease forwards');
+}
+
+.o-animate-#{$animation2}-stagger-1 {
+  position: relative;
+  opacity: 0;
+  left: 0;
+  @include animation('#{$animation2} 800ms 200ms ease forwards');
+}
+
+@include keyframes($animation2) {
+  0%   { opacity: 0;  left: -20px; }
+  100% { opacity: 1;  left: 0; }
+}
+
+$animation3: fade-out-scale-up;
+@include keyframes($animation3) {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.1); opacity: 0;}
+}
+
+.o-animate-#{$animation3} {
+  opacity: 0;
+  scale: 1;
+  @include animation('#{$animation3} 800ms 0ms ease forwards');
+}
+
+
+@include keyframes(fade-out) {
+  0%   { opacity: 1;  }
+  100% { opacity: 0;  }
+}
+
+.o-animate-fade-out {
+  opacity: 1;
+  @include animation('fade-out 800ms 0ms ease forwards');
+}
+
+@include keyframes(fade-in) {
+  0%   { opacity: 0;  }
+  100% { opacity: 1;  }
+}
+
+.o-animate-fade-in {
+  opacity: 0;
+  @include animation('fade-in 800ms 0ms ease forwards');
+}
+
 .o-transition-pull-up {
   position: relative;
   transform: translateY(30px);

@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-.u-float-right {
+.u-float-left {
   float: left;
 }
 
@@ -23,6 +23,27 @@
   z-index: 1;
 }
 
-.pull-up-large {
+.u-pull-up-large {
   margin-top: -#{$inuit-global-spacing-unit-large};
+}
+
+.u-full-page {
+  height: 100vh;
+}
+
+.u-full-page-98 {
+  height: 98vh;
+}
+
+.u-center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.u-vertical-center-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

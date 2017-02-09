@@ -1,0 +1,27 @@
+.c-polaroid {
+  border: 1px solid white;
+  padding: #{$inuit-global-spacing-unit-factor-tiny}em;
+  background: white;
+  color: #333;
+}
+
+.c-polaroid__body {
+  padding: $inuit-global-spacing-unit;
+}
+
+.c-polaroid__title,
+.c-polaroid__description {
+  margin-bottom: 0;
+}
+
+.c-polaroid__title {
+  @extend .u-text-alt-heading;
+}
+
+.c-polaroid__description {
+  @extend .u-text-helvetica;
+}
+
+.c-polaroid__img-container {
+  overflow: hidden;
+}

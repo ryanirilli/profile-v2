@@ -1,0 +1,31 @@
+%bare-list {
+  list-style: none;
+  margin: 0;
+}
+
+$c-list-anatomy-width: 75px;
+.c-list-anatomy {
+  @extend %bare-list;
+  >li {
+    margin-left: 20px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: -($c-list-anatomy-width) - 15px;
+      width: $c-list-anatomy-width;
+      height: 20px;
+      background: url('/public/list-anatomy-connector.svg') no-repeat;
+    }
+  }
+}
+
+.c-list-anatomy--right {
+  margin-left: 0px;
+  margin-right: 20px;
+  >li:after {
+    left: auto;
+    right: -($c-list-anatomy-width) - 15px;
+  }
+}

@@ -8,7 +8,21 @@ module.exports = function(env) {
   return {
     entry: {
       main: './src/index.js',
-      vendor: ['react', 'react-dom', 'immutable', 'gsap']
+      vendor: [
+        'fetch-jsonp',
+        'gsap',
+        'imagesloaded',
+        'immutable',
+        'masonry-layout',
+        'mobile-detect',
+        'mo-js',
+        'react',
+        'react-dom',
+        'react-redux',
+        'react-router',
+        'redux',
+        'whatwg-fetch'
+      ]
     },
     output: {
       filename: '[chunkhash].[name].js',
@@ -27,6 +41,9 @@ module.exports = function(env) {
           fallbackLoader: 'style-loader',
           loader: ['css-loader', 'sass-loader']
         })
+      }, {
+        test: /\.json$/,
+        use: 'json-loader'
       }]
     },
     devtool: "source-map",

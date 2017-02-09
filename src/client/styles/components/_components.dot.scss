@@ -1,0 +1,11 @@
+$c-dot-size: 20px;
+.c-dot {
+  display: inline-block;
+  width: $c-dot-size;
+  height: $c-dot-size;
+  border-radius: 50%;
+}
+
+.c-dot--white-border {
+  border: 2px solid white;
+}

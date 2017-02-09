@@ -1,5 +1,62 @@
+%serrated-ends {
+  position: relative;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background-repeat: repeat-x;
+    left: 0;
+    z-index: 1;
+  }
+  &:before {
+    bottom: -15px;
+  }
+  &:after {
+    top: -15px;
+  }
+}
+
+%accent-circle {
+  position: relative;
+  &:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 25px);
+  }
+}
+
 .u-bg-white {
   background: white;
+  color: black;
+  &.u-bg--serrated-bottom {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-white.svg');
+    }
+  }
+}
+
+.u-bg-white-15 {
+  background: rgba(255, 255, 255, 0.15)
+}
+
+.u-bg-white-fade-top-to-bottom {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#333745+0,000000+0,000000+100&0+0,0.4+100 */
+  background: -moz-linear-gradient(-45deg,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.u-bg-black {
+  background-color: black;
 }
 
 .u-bg-bright {
@@ -21,40 +78,8 @@
   background: $lightest-grey;
 }
 
-%accent-circle {
-  position: relative;
-  &:before {
-    content: '';
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    top: -15px;
-    left: calc(50% - 25px);
-  }
-}
-
-%serrated-ends {
-  position: relative;
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 15px;
-    background-repeat: repeat-x;
-  }
-  &:before {
-    bottom: -15px;
-  }
-  &:after {
-    top: -15px;
-  }
-}
-
-
 .u-bg-red {
-  background: $red;
+  background-color: $red;
   color: $white;
   &.u-bg--accent {
     @extend %accent-circle;
@@ -99,6 +124,35 @@
   }
 }
 
+$points-blue: #027bb6;
+.u-bg-points {
+  background: $points-blue;
+  color: $white;
+  &.u-bg--serrated-bottom {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-points.svg');
+    }
+  }
+}
+
+$carhelper-red: #cc262b;
+.u-bg-carhelper {
+  background: #cc262b;
+  &.u-bg--serrated-bottom {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-carhelper.svg');
+    }
+  }
+  &.u-bg--accent {
+    @extend %accent-circle;
+    &:before {
+      background: $carhelper-red;
+    }
+  }
+}
+
 .u-bg-secondary-color {
   background: $secondary-color;
   color: rgba(white, 0.46);
@@ -116,4 +170,30 @@
 .u-bg-tertiary-color {
   background: $tertiary-color;
   color: white;
+}
+
+.u-bg-sky-blue {
+  background: #1A8BE1;
+}
+
+.u-bg-pink {
+  background: #FF5265;
+}
+
+.u-bg-grain {
+  background: url('/public/light_toast.png') repeat;
+  color: #333;
+}
+
+.u-bg-yellow {
+  background: #f5e156;
+  color: #333;
+}
+
+.u-bg-carhelper-blue {
+  background: #266ED9;
+}
+
+.u-bg-carhelper-dark-blue {
+  background: #1B498B;
 }

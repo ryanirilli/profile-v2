@@ -1,0 +1,35 @@
+.c-portfolio {
+  .o-wrapper {
+    max-width: 1050px;
+  }
+}
+
+.c-portfolio__brain-left,
+.c-portfolio__brain-right {
+  height: 326px;
+  position: absolute;
+  top: calc(50% - 163px);
+}
+
+$brain-width: 195px;
+@include keyframes(left-brain) {
+  0%   { transform: translateX($brain-width); }
+  100% { transform: translateX(0px); }
+}
+
+@include keyframes(right-brain) {
+  0%   { transform: translateX(-($brain-width)); }
+  100% { transform: translateX(0px); }
+}
+
+.c-portfolio__brain-left {
+  right: 0;
+  transform: translateX($brain-width);
+  @include animation('left-brain 800ms 0ms ease forwards');
+}
+
+.c-portfolio__brain-right {
+  left: 0;
+  transform: translateX(-($brain-width));
+  @include animation('right-brain 800ms 300ms ease forwards');
+}

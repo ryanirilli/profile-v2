@@ -22,7 +22,6 @@ export class Home extends Component {
   }
 
   handleScrollVal(scrollVal) {
-    console.log('scrollVal: ', scrollVal);
     const heroOpacityScrollValLimit = 250;
     if (scrollVal <= heroOpacityScrollValLimit) {
       this.setState({heroOpacity: 1-scrollVal/heroOpacityScrollValLimit})
