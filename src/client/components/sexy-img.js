@@ -24,15 +24,18 @@ export default class SexyImg extends Component {
     return <div className={`c-modal ${isAnimatingDetailOut ? 'o-animate-fade-out' : 'o-animate-fade-in'}`}>
       <div className={`c-modal__content ${isAnimatingDetailOut ? 'o-animate-fade-out-slide-right' : 'o-animate-fade-in-slide-right-stagger-1'}`}
            onAnimationEnd={e => this.onAnimationEnd()}>
-        <img onClick={e => this.setState({isAnimatingDetailOut: true})}
-             src={this.props.src} />
+        <div className="u-text-center">
+          <img className={this.props.detailClassName || ''}
+               onClick={e => this.setState({isAnimatingDetailOut: true})}
+               src={this.props.src} />
+        </div>
       </div>
     </div>
   }
 
   render() {
     return <div className="c-sexy-img">
-      <img ref="img" onClick={e => this.setState({isShowingDetail: true})} src={this.props.src} />
+      <img className={this.props.className || ''} ref="img" onClick={e => this.setState({isShowingDetail: true})} src={this.props.src} />
       {this.state.isShowingDetail && this.renderDetail()}
     </div>
   }

@@ -102,8 +102,6 @@ $mq-breakpoints: (
 @import "~inuitcss/elements/elements.tables";
 
 // OBJECTS
-//
-// Uncomment and add to this section as necessary.
 @import "objects/objects.transitions-and-animations";
 @import "~inuitcss/objects/objects.wrapper";
 @import "~inuitcss/objects/objects.layout";
@@ -119,8 +117,6 @@ $mq-breakpoints: (
 @import "~inuitcss/objects/objects.pack";
 
 // COMPONENTS
-//
-// Build and include your project’s UI Compoments here.
 @import "components/components.buttons";
 @import "components/components.dot";
 @import "components/components.headings";

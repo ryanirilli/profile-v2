@@ -2,6 +2,10 @@
   mix-blend-mode: luminosity;
 }
 
+.u-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
 .u-no-blend-on-hover:hover {
   mix-blend-mode: inherit;
 }

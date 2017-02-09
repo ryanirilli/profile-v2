@@ -22,8 +22,6 @@ Chart.defaults.global = Object.assign({}, chartDefaults, {
   }
 });
 
-console.log(Chart.defaults.global);
-
 const SLIDE_LIST = [
   'renderName',
   'renderMetropolis',
@@ -33,7 +31,12 @@ const SLIDE_LIST = [
   'renderApartmentList',
   'renderCarHelper',
   'renderPointsIntro',
-  'renderPoints'
+  'renderPoints',
+  'renderPersonalIntro',
+  'renderSpotworm',
+  'renderArchitecture',
+  'renderTechnical',
+  'renderThankYou'
 ];
 
 const INITIAL_SLIDE = 1;
@@ -154,7 +157,7 @@ export class Portfolio extends Component {
     const headingClasses = 'u-padding-top-huge u-text-alt-heading';
     const content = isTransitioning => (<div>
       <div className="o-layout o-layout--flush">
-        <div className="o-layout__item u-1/2 u-full-page u-bg-black u-position-relative u-overflow-hidden">
+        <div className="o-layout__item u-1/2 u-full-page u-bg-dark-teal u-position-relative u-overflow-hidden">
           <h2 className={`${headingClasses} u-text-right`}>
             Both Sides &nbsp;
           </h2>
@@ -170,7 +173,7 @@ export class Portfolio extends Component {
           </div>
           <img className={`${!isTransitioning ? 'c-portfolio__brain-left' : 'u-display-none'}`} src="/public/portfolio/left-brain.svg" />
         </div>
-        <div className="o-layout__item u-1/2 u-full-page u-bg-yellow u-position-relative u-overflow-hidden">
+        <div className="o-layout__item u-1/2 u-full-page u-bg-blue u-position-relative u-overflow-hidden">
           <h2 className={headingClasses}>
             &nbsp; Of The Brain
           </h2>
@@ -279,7 +282,6 @@ export class Portfolio extends Component {
         </div>
       </div>
 
-
       <div className="u-bg-grain">
         <div className="o-wrapper">
           <div className="u-padding-top-huge u-padding-bottom-huge o-layout o-layout--flush o-layout--center">
@@ -327,7 +329,6 @@ export class Portfolio extends Component {
             </div>
           </div>
 
-
           <div className="u-padding-bottom-huge o-layout o-layout--center">
             <div className="o-layout__item u-1/6">
               <ul className="c-list-anatomy c-list-anatomy--right u-padding-top-huge">
@@ -357,7 +358,6 @@ export class Portfolio extends Component {
               </ul>
             </div>
           </div>
-
 
           <div className="u-padding-bottom-huge o-layout o-layout--flush o-layout--center">
             <div className="o-layout__item u-1/3">
@@ -449,7 +449,7 @@ export class Portfolio extends Component {
       <div className="o-layout o-layout--flush o-layout--center">
         <div className="o-layout__item u-2/3">
           <div className="u-padding-bottom-huge">
-            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom">
+            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom-huge">
               <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
                 Program Tracker
               </h2>
@@ -488,7 +488,7 @@ export class Portfolio extends Component {
               </div>
             </div>
 
-            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom">
+            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom-huge">
               <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
                 Redeem
               </h2>
@@ -519,7 +519,7 @@ export class Portfolio extends Component {
               </div>
             </div>
 
-            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom">
+            <div className="u-bg-white-fade-top-to-bottom u-rounded-corners-large u-padding u-margin-bottom-huge">
               <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
                 Exchange
               </h2>
@@ -595,6 +595,308 @@ export class Portfolio extends Component {
       );
     };
     return this.renderContent(content, SLIDE_LIST.indexOf('renderTumblr') + 1, true);
+  }
+
+  renderPersonalIntro() {
+    const content = transitionState => {
+      return <div>
+        <h1 className="u-text-alt-heading u-text-center">
+          Always Be Hustlin'
+        </h1>
+      </div>
+    };
+    return this.renderContent(content, SLIDE_LIST.indexOf('renderPersonalIntro') + 1);
+  }
+
+  renderSpotworm() {
+    const listTitleClasses = 'u-text-alt-heading u-border-bottom-white u-text-color-blue';
+    const content = transitionState => {
+      return <div>
+        <div className="u-bg-orange u-bg--serrated-bottom">
+          <div className="o-layout o-layout--flush o-layout--center">
+            <div className="o-layout__item u-1/2 u-full-page">
+              <div className="u-center-content">
+                <img className="u-1/1" src="/public/portfolio/logo_spotworm_white.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="o-layout o-layout__flush o-layout--center">
+          <div className="o-layout__item u-5/6">
+            <div className="u-padding-bottom-huge u-padding-top-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+              <div className="o-layout__item u-1/3">
+                <ul className="c-list-anatomy c-list-anatomy--right u-padding-top-huge">
+                  <li className="u-padding-bottom">
+                    <h3 className={listTitleClasses}>
+                      Typeahead
+                    </h3>
+                    <p>
+                      The homepage is focused on simplicity and delight. Search by your favorite artist to get a list of
+                      recommended tracks.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="o-layout__item u-2/3">
+                <SexyImg src="/public/portfolio/spotworm/spotworm-home-results.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="o-layout o-layout__flush o-layout--center">
+          <div className="o-layout__item u-5/6">
+            <div className="u-padding-bottom-huge o-layout o-layout--center">
+              <div className="o-layout__item u-1/6">
+                <ul className="c-list-anatomy c-list-anatomy--right u-padding-top-huge">
+                  <li className="u-padding-bottom">
+                    <h3 className={listTitleClasses}>
+                      Sliders
+                    </h3>
+                    <p>
+                      Mood sliders help you narrow in on the type of songs you are looking for
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="o-layout__item u-2/3">
+                <SexyImg src="/public/portfolio/spotworm/spotworm-results.png" />
+              </div>
+              <div className="o-layout__item u-1/6">
+                <ul className="c-list-anatomy u-padding-top-large">
+                  <li className="u-padding-bottom">
+                    <h3 className={listTitleClasses}>
+                      Preview
+                    </h3>
+                    <p>
+                      Instantly preview tracks on mouse hover
+                    </p>
+                  </li>
+                  <li className="u-padding-bottom">
+                    <h3 className={listTitleClasses}>
+                      Drag & Drop
+                    </h3>
+                    <p>
+                      Find a track you like? Connect to Spotify and drag it to any of your playlists
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="o-layout o-layout__flush o-layout--center">
+          <div className="o-layout__item u-5/6">
+            <div className="u-padding-bottom-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+              <div className="o-layout__item u-4/5">
+                <SexyImg src="/public/portfolio/spotworm/spotworm-artist-details.png" />
+              </div>
+              <div className="o-layout__item u-1/5">
+                <ul className="c-list-anatomy u-padding-top-huge">
+                  <li className="u-padding-bottom">
+                    <h3 className={listTitleClasses}>
+                      Artist Details
+                    </h3>
+                    <p>
+                      Found a new artist you like? click the more icon to see their full discography
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="o-layout o-layout__flush o-layout--center u-padding-bottom-huge">
+          <div className="o-layout__item u-5/6">
+            <div className="u-padding u-margin-bottom">
+              <div className="u-padding-left-huge u-padding-right-huge">
+                <div className="o-layout o-layout--large">
+                  <div className="o-layout__item u-1/3">
+                    <div className="c-mobile-device">
+                      <div className="c-mobile-device__content">
+                        <img src="/public/portfolio/spotworm/spotworm-home-mobile.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="o-layout__item u-1/3">
+                    <div className="c-mobile-device">
+                      <img src="/public/portfolio/spotworm/spotworm-results-mobile-2.png" />
+                    </div>
+                  </div>
+                  <div className="o-layout__item u-1/3">
+                    <div className="c-mobile-device">
+                      <img src="/public/portfolio/spotworm/spotworm-preview-mobile.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    };
+    return this.renderContent(content, SLIDE_LIST.indexOf('renderSpotworm') + 1, true, '');
+  }
+
+  renderTechnical() {
+    const content = transitionState => {
+      return <div>
+        <div className="u-full-page">
+          <div className="u-center-content">
+            <div className="o-layout o-layout--center o-layout--flush">
+              <div className="o-layout__item u-1/1">
+                <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
+                  Activity
+                </h2>
+              </div>
+              <div className="o-layout__item u-2/3">
+                <div className="o-layout o-layout--center o-layout--tiny">
+                  <div className="o-layout__item u-1/2">
+                    <SexyImg src="/public/portfolio/technical/github-profile.png" />
+                  </div>
+                  <div className="o-layout__item u-1/2">
+                    <SexyImg src="/public/portfolio/technical/medium-2.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    };
+    return this.renderContent(content, SLIDE_LIST.indexOf('renderTechnical') + 1, true);
+  }
+
+  renderArchitecture() {
+    const listTitleClasses = 'u-text-alt-heading u-border-bottom-white u-text-color-blue';
+    const content = transitionState => {
+      return <div>
+        <div className="u-padding-top-huge u-padding-bottom-huge">
+          <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
+            Architecture
+          </h2>
+          <div className="o-layout o-layout__flush o-layout--center">
+            <div className="o-layout__item u-5/6">
+              <div className="u-padding u-margin-bottom">
+                <div className="u-padding-left-huge u-padding-right-huge">
+                  <div className="o-layout o-layout--flush">
+                    <div className="o-layout__item u-1/2">
+                      <img src="/public/portfolio/technical/ITCSS_logo.png" />
+                    </div>
+                    <div className="o-layout__item u-1/2">
+                      <SexyImg detailClassName="u-1/2" src="/public/portfolio/technical/ITCSS.jpg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="o-layout o-layout__flush o-layout--center">
+            <div className="o-layout__item u-5/6">
+              <div className="u-padding-bottom-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+                <div className="o-layout__item u-1/2">
+                  <SexyImg src="/public/portfolio/technical/css-structure.png" />
+                </div>
+                <div className="o-layout__item u-1/3">
+                  <ul className="c-list-anatomy u-padding-top-huge">
+                    <li className="u-padding-bottom">
+                      <h3 className={listTitleClasses}>
+                        Manifest
+                      </h3>
+                      <p>
+                        Each import follows the inverted triangle structure providing a sane approach to managing a lot of css modules
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="o-layout o-layout__flush o-layout--center">
+            <div className="o-layout__item u-5/6">
+              <div className="u-padding-bottom-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+                <div className="o-layout__item u-1/3">
+                  <ul className="c-list-anatomy c-list-anatomy--right u-padding-top-large">
+                    <li className="u-padding-bottom">
+                      <h3 className={listTitleClasses}>
+                        Syncing Breakpoints
+                      </h3>
+                      <p>
+                        by keeping the named breakpoints in sync with the redux store we can conditionally render blocks
+                        of UI depending on context
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div className="o-layout__item u-2/3">
+                  <div className="u-padding-left">
+                    <SexyImg src="/public/portfolio/technical/sync-breakpoints.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="o-layout o-layout__flush o-layout--center">
+            <div className="o-layout__item u-5/6">
+              <div className="u-padding-bottom-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+                <div className="o-layout__item u-1/2">
+                  <SexyImg src="/public/portfolio/technical/BEM.png" />
+                </div>
+                <div className="o-layout__item u-1/3">
+                  <ul className="c-list-anatomy u-padding-top-huge">
+                    <li className="u-padding-bottom">
+                      <h3 className={listTitleClasses}>
+                        BEM
+                      </h3>
+                      <p>
+                        BEM stands for block-element-modifier and it helps keep your HTML semantic.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
+            Unidirectional Data Flow
+          </h2>
+          <div className="o-layout o-layout__flush o-layout--center">
+            <div className="o-layout__item u-5/6">
+              <div className="u-padding-bottom-huge u-padding-left-large u-padding-right-large o-layout o-layout--center">
+                <div className="o-layout__item u-1/3">
+                  <div className="u-padding-top-huge">
+                    <img className="u-1/2" src="/public/portfolio/react-logo.svg" />
+                    <img className="u-1/2" src="/public/portfolio/redux-logo.svg" />
+                  </div>
+                </div>
+                <div className="o-layout__item u-2/3">
+                  <img src="/public/portfolio/technical/unidirectional-flow.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    };
+    return this.renderContent(content, SLIDE_LIST.indexOf('renderArchitecture') + 1, true);
+  }
+
+  renderThankYou() {
+    const content = transitionState => {
+      return <div className="u-full-page u-bg-blue">
+        <div className="u-center-content">
+          <img src="/public/portfolio/thank_you.png" />
+        </div>
+      </div>
+    };
+    return this.renderContent(content, SLIDE_LIST.indexOf('renderThankYou') + 1, true);
   }
 
   renderContent(content, i, isFullPage, classNames = 'u-1/3') {

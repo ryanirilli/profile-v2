@@ -186,7 +186,7 @@ $carhelper-red: #cc262b;
 }
 
 .u-bg-yellow {
-  background: #f5e156;
+  background: #e4d236;
   color: #333;
 }
 
@@ -196,4 +196,23 @@ $carhelper-red: #cc262b;
 
 .u-bg-carhelper-dark-blue {
   background: #1B498B;
+}
+
+.u-bg-orange {
+  background: #f5614c;
+  color: white;
+  &.u-bg--serrated-bottom {
+    @extend %serrated-ends;
+    &:before {
+      background-image: url('/public/serrated-bottom-orange.svg');
+    }
+  }
+}
+
+.u-bg-blue {
+  background: #4dd8e2;
+}
+
+.u-bg-dark-teal {
+  background: #194144;
 }
