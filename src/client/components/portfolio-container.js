@@ -39,7 +39,7 @@ const SLIDE_LIST = [
   'renderThankYou'
 ];
 
-const INITIAL_SLIDE = 7;
+const INITIAL_SLIDE = 1;
 const NUM_SLIDES = SLIDE_LIST.length;
 
 export class Portfolio extends Component {
