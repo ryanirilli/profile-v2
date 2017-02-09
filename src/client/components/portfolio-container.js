@@ -39,7 +39,7 @@ const SLIDE_LIST = [
   'renderThankYou'
 ];
 
-const INITIAL_SLIDE = 1;
+const INITIAL_SLIDE = 7;
 const NUM_SLIDES = SLIDE_LIST.length;
 
 export class Portfolio extends Component {
@@ -401,6 +401,26 @@ export class Portfolio extends Component {
           <div className="o-layout__item u-1/4">
             <img src="/public/portfolio/sass.svg" />
           </div>
+        </div>
+      </div>
+
+      <h2 style={{fontSize: '50px'}} className="u-text-alt-heading u-text-center">
+        Motion Work
+      </h2>
+      <div className="u-padding-bottom-huge o-layout o-layout--center">
+        <div className="o-layout__item u-2/3">
+          <iframe src="https://player.vimeo.com/video/38232890?title=0&byline=0&portrait=0"
+                  style={{margin: '0 auto'}}
+                  width="100%"
+                  height="360"
+                  frameBorder="0" />
+        </div>
+        <div className="o-layout__item u-2/3 u-padding-top-huge">
+          <iframe src="https://player.vimeo.com/video/46887185?title=0&byline=0&portrait=0"
+                  style={{margin: '0 auto'}}
+                  width="100%"
+                  height="360"
+                  frameBorder="0" />
         </div>
       </div>
     </div>);
