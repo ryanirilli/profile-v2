@@ -220,6 +220,12 @@ export class Home extends Component {
         </div>
       </section>
 
+      <div className="o-flex">
+        <div><img src="/public/keep-on-truckin/keep-on-truckin-1.png" /></div>
+        <div><img src="/public/keep-on-truckin/keep-on-truckin-2.png" /></div>
+        <div><img src="/public/keep-on-truckin/keep-on-truckin-3.png" /></div>
+      </div>
+
       <footer className="u-text-center">
         <div>
           More Soon!
